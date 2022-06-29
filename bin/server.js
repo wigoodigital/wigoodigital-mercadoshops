@@ -18,15 +18,3 @@ function normalizaPort(val) {
 app.listen(port, function () {
     console.log(`app listening on port ${port}`)
 })
-
-
-const https = require('https');
-const fs = require('fs');
-
-
-const options = {
-    key: fs.readFileSync('key.pem'),
-    cert: fs.readFileSync('cert.pem')
-};
-
-https.createServer(options, app).listen(3001);
